@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Aluno: Igor Santos Chediack Pimenta Bueno -->
+<!-- Professor: Daniel Correa da Silva -->
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevTech Academy - Gerenciamento de Alunos</title>
+</head>
+<body>
+  <header>
+    <h1>DevTech Academy</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Cadastro</h2>
+      <form id="form">
+        <p><label>Nome: <input type="text" name="nome" pattern=".*\S.*" title="Preencha com texto, não só espaços" required></label></p>
+        <p><label>Idade: <input type="number" name="idade" min="1" required></label></p>
+        <p>
+          <label>Curso:
+            <select name="curso" required>
+              <option value="JavaScript">JavaScript</option>
+              <option value="Python">Python</option>
+              <option value="Java">Java</option>
+            </select>
+          </label>
+        </p>
+        <p><label>Nota Final: <input type="number" name="notaFinal" min="0" max="10" step="0.01" required></label></p>
+        <button type="button" id="salvar">Cadastrar</button>
+        <button type="button" id="cancelar">Cancelar</button>
+      </form>
+    </section>
+
+    <section>
+      <h2>Alunos</h2>
+      <table border="1">
+        <thead>
+          <tr><th>Nome</th><th>Idade</th><th>Curso</th><th>Nota Final</th><th>Situação</th><th>Ações</th></tr>
+        </thead>
+        <tbody id="corpo"></tbody>
+      </table>
+      <p id="vazio">Nenhum aluno cadastrado.</p>
+    </section>
+
+    <section>
+      <h2>Relatórios</h2>
+      <button type="button" data-relatorio="aprovados">Alunos aprovados</button>
+      <button type="button" data-relatorio="mediaNotas">Média das notas</button>
+      <button type="button" data-relatorio="mediaIdades">Média das idades</button>
+      <button type="button" data-relatorio="ordem">Nomes em ordem alfabética</button>
+      <button type="button" data-relatorio="porCurso">Alunos por curso</button>
+      <pre id="saida" aria-live="polite"></pre>
+    </section>
+  </main>
+
+  <script src="Aluno.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
